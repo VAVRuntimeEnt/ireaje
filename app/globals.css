@@ -1,0 +1,815 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%; /* Texto quase preto com tom azulado para profissionalismo */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%; /* Texto quase preto com tom azulado */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%; /* Texto quase preto com tom azulado */
+    --primary: 200 100% 25%; /* Azul Microsoft mais profundo */
+    --primary-foreground: 0 0% 100%; /* Texto branco puro */
+    --secondary: 200 100% 15%; /* Azul secundário mais escuro */
+    --secondary-foreground: 0 0% 100%; /* Texto branco puro */
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 10% 20%; /* Texto muted mais escuro */
+    --accent: 200 100% 35%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 40%; /* Vermelho mais escuro */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 75%; /* Bordas mais escuras e visíveis */
+    --input: 220 13% 75%; /* Bordas de input mais escuras */
+    --ring: 200 100% 25%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-space font-bold;
+  }
+}
+
+/* Remover TODOS os efeitos de brilho dinâmico e aumentar o contraste */
+
+/* Remover completamente os efeitos de brilho e animações */
+.glass-panel::before,
+.glass-panel-strong::before,
+.glass-card::before,
+.glass-card-strong::before,
+.glass-button::before,
+.glass-button-strong::before,
+.glassmorphism::before,
+.glassmorphism-strong::before,
+.animated-border::after,
+.glass-highlight::after,
+.glass-container::before {
+  display: none !important;
+  content: none !important;
+  animation: none !important;
+}
+
+/* Fazer todos os painéis de vidro completamente brancos e sólidos */
+.glass-panel,
+.glass-panel-strong,
+.glass-card,
+.glass-card-strong,
+.glass-button,
+.glass-button-strong,
+.glassmorphism,
+.glassmorphism-strong,
+.glass-container {
+  background-color: white !important;
+  backdrop-filter: none !important;
+  border: 1px solid #ccc !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Remover todas as animações */
+.animate-float,
+.animate-float-slow,
+.animate-float-fast,
+.animate-pulse-slow,
+.animate-fade-in,
+.animate-slide-up,
+.animate-float-geometric {
+  animation: none !important;
+}
+
+/* Aumentar drasticamente o contraste do texto */
+p,
+span,
+a,
+li,
+label,
+input,
+textarea,
+button,
+div {
+  color: black !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black !important;
+  text-shadow: none !important;
+  font-weight: bold !important;
+}
+
+/* Manter APENAS o efeito vítreo nas fontes azuis */
+.gradient-text {
+  background: linear-gradient(90deg, #0078d7, #005a9e, #004275);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* Simplificar o efeito vítreo nas fontes azuis - sem animação */
+.gradient-text::before {
+  content: none !important;
+  animation: none !important;
+}
+
+/* Remover todos os efeitos de blur */
+.backdrop-blur-md,
+.backdrop-blur-xl,
+.backdrop-blur-2xl,
+.backdrop-blur-sm {
+  backdrop-filter: none !important;
+}
+
+/* Fazer o header completamente branco */
+header.glass-panel-strong {
+  background-color: white !important;
+  backdrop-filter: none !important;
+  border-bottom: 1px solid #ccc !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Aumentar a opacidade do fundo para contraste máximo */
+.bg-white\/10,
+.bg-white\/20,
+.bg-white\/25,
+.bg-white\/30,
+.bg-white\/35,
+.bg-white\/40,
+.bg-white\/50,
+.bg-white\/60,
+.bg-white\/70,
+.bg-white\/80 {
+  background-color: white !important;
+}
+
+/* Garantir que os botões tenham bom contraste */
+.btn-microsoft-blue,
+button[class*="bg-gradient"],
+a[class*="bg-gradient"] {
+  background: #0078d7 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  border: none !important;
+}
+
+/* Remover todos os efeitos de fundo fluido */
+.fluid-bg::before,
+.fluid-bg::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Remover blobs */
+.blob {
+  display: none !important;
+}
+
+/* Remover elementos geométricos */
+.geometric-shape,
+.geometric-triangle,
+.geometric-square,
+.geometric-circle,
+.geometric-hexagon,
+.geometric-pattern,
+.geometric-dots,
+.geometric-lines {
+  display: none !important;
+}
+
+/* Remover acentos de vidro */
+.glass-accent,
+.glass-decoration,
+.glass-float {
+  display: none !important;
+}
+
+/* Simplificar divisores */
+.glass-divider,
+.glass-divider-vertical {
+  height: 1px !important;
+  background: #ccc !important;
+  margin: 1rem 0 !important;
+}
+
+/* Simplificar pills */
+.glass-pill {
+  background-color: #f5f5f5 !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+}
+
+/* Remover animações de keyframes */
+@keyframes shimmer {
+  0%,
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer-text {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Ajustando o componente GlassPanel para usar as novas classes */
+.rounded-xl {
+  border-radius: 1rem !important;
+}
+
+/* Aumentando a transparência de outros elementos */
+.section-spacing {
+  background-color: transparent !important;
+}
+
+/* Section spacing - Reduzido ainda mais */
+.section-spacing {
+  padding-top: 4rem; /* Aumentado de 2rem para 4rem */
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+/* Adicionando espaçamento específico para seções adjacentes */
+.section-spacing + .section-spacing {
+  padding-top: 6rem;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: 3rem; /* Aumentado de 1.5rem para 3rem */
+    padding-bottom: 3rem;
+  }
+
+  .section-spacing + .section-spacing {
+    padding-top: 4rem;
+  }
+
+  .mobile-reduced-content {
+    font-size: 0.9rem;
+  }
+
+  .mobile-reduced-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .mobile-reduced-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .mobile-reduced-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .mobile-reduced-content p {
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  .mobile-compact {
+    padding: 0.75rem !important;
+  }
+
+  .mobile-compact-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajustando os elementos decorativos */
+.glass-accent,
+.glass-decoration,
+.glass-float {
+  opacity: 0.4;
+}
+
+/* Glass Accent Elements - Cores Microsoft mais profissionais */
+.glass-accent {
+  @apply bg-white border border-gray-300 shadow-md;
+  position: absolute;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.glass-accent-1 {
+  width: 100px;
+  height: 100px;
+  transform: rotate(15deg);
+}
+
+.glass-accent-2 {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-10deg);
+  border-radius: 50%;
+}
+
+.glass-accent-3 {
+  width: 120px;
+  height: 60px;
+  transform: rotate(5deg);
+}
+
+/* Glass Decorations - Cores Microsoft mais profissionais */
+.glass-decoration {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glass-decoration-circle {
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(150, 150, 150, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.glass-decoration-square {
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(150, 150, 150, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.glass-decoration-pill {
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(150, 150, 150, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* Glass Floating Elements - Cores Microsoft mais profissionais */
+.glass-float {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+}
+
+.glass-float-1 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(150, 150, 150, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  animation-delay: -2s;
+}
+
+.glass-float-2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(150, 150, 150, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  animation-delay: -4s;
+}
+
+.glass-float-3 {
+  width: 40px;
+  height: 100px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(150, 150, 150, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  animation-delay: -6s;
+}
+
+/* Lazy Loading */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Espaçamento reduzido entre seções */
+.section-divider {
+  margin: 2rem 0;
+  padding: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(150, 150, 150, 0.5), transparent);
+}
+
+/* Adicionando um divisor aprimorado para maior espaçamento onde estava a seção de diferenciais */
+.section-divider-enhanced {
+  margin: 4rem 0; /* Espaçamento maior */
+  height: 2px; /* Linha mais grossa */
+  background: linear-gradient(90deg, transparent, rgba(0, 120, 215, 0.3), transparent); /* Cor azul sutil */
+  position: relative;
+}
+
+/* Adicionando um efeito sutil ao divisor aprimorado */
+.section-divider-enhanced::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 20px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+  filter: blur(8px);
+}
+
+/* Adicionar classe de acessibilidade para textos */
+.accessible-text {
+  font-weight: 500; /* Texto mais grosso */
+  letter-spacing: 0.01em; /* Melhor espaçamento entre letras */
+  line-height: 1.6; /* Melhor altura de linha */
+}
+
+/* Adicionar classe para links mais acessíveis */
+.accessible-link {
+  text-decoration: underline; /* Sublinhar links */
+  font-weight: 500; /* Texto mais grosso */
+  transition: all 0.2s ease; /* Sublinhar links */
+  font-weight: 500; /* Texto mais grosso */
+  transition: all 0.2s ease;
+}
+
+.accessible-link:hover,
+.accessible-link:focus {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* Adicionar foco visível para elementos interativos */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #0078d7; /* Contorno visível - Azul Microsoft */
+  outline-offset: 2px;
+}
+
+/* Botões com maior contraste - Cores Microsoft */
+.btn-microsoft-blue {
+  background-color: #0078d7; /* Azul Microsoft */
+  color: white !important;
+  border: 2px solid #0078d7; /* Borda mais grossa */
+  font-weight: 600 !important;
+  transition: all 0.3s ease;
+  text-shadow: none !important; /* Removendo sombra do texto */
+}
+
+.btn-microsoft-blue:hover {
+  background-color: #005a9e; /* Azul Microsoft mais escuro */
+  border-color: #005a9e;
+}
+
+.btn-microsoft-red {
+  background-color: #e74c3c; /* Vermelho Microsoft */
+  color: white !important;
+  border: 1px solid #e74c3c;
+  transition: all 0.3s ease;
+}
+
+.btn-microsoft-red:hover {
+  background-color: #c0392b; /* Vermelho Microsoft mais escuro */
+  border-color: #c0392b;
+}
+
+.btn-microsoft-green {
+  background-color: #107c10; /* Verde Microsoft */
+  color: white !important;
+  border: 1px solid #107c10;
+  transition: all 0.3s ease;
+}
+
+.btn-microsoft-green:hover {
+  background-color: #0b5a0b; /* Verde Microsoft mais escuro */
+  border-color: #0b5a0b;
+}
+
+.btn-microsoft-yellow {
+  background-color: #ffb900; /* Amarelo Microsoft */
+  color: #333 !important;
+  border: 1px solid #ffb900;
+  transition: all 0.3s ease;
+}
+
+.btn-microsoft-yellow:hover {
+  background-color: #e0a800; /* Amarelo Microsoft mais escuro */
+  border-color: #e0a800;
+}
+
+/* Aumentando o contraste do texto para maior nitidez */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000 !important;
+  text-shadow: none !important; /* Removendo sombra do texto */
+}
+
+p,
+span,
+a,
+button {
+  color: #000 !important;
+  text-shadow: none !important; /* Removendo sombra do texto */
+}
+
+/* Melhorando a nitidez das bordas */
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r {
+  border-color: rgba(150, 150, 150, 0.9); /* Borda mais visível */
+}
+
+/* Ajustes específicos para a seção de tecnologias */
+.technologies-section .glass-panel,
+.technologies-section .glass-panel-strong,
+.technologies-section .glass-card,
+.technologies-section .glass-card-strong {
+  backdrop-filter: none !important;
+  background-color: rgba(255, 255, 255, 0.85) !important; /* Reduzindo significativamente a opacidade para 8% */
+  border-color: rgba(200, 200, 200, 0.8) !important; /* Bordas mais sutis */
+}
+
+.technologies-section .glass-panel-strong {
+  background-color: rgba(255, 255, 255, 0.85) !important; /* Um pouco mais opaco para elementos importantes, mas ainda muito transparente */
+}
+
+.technologies-grid .feature-card {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.technologies-section .section-header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Garantindo que o texto permaneça legível mesmo com maior transparência */
+.technologies-section h2,
+.technologies-section h3 {
+  text-shadow: none !important; /* Sutil sombra para melhorar legibilidade */
+}
+
+.technologies-section p {
+  text-shadow: none !important; /* Sutil sombra para melhorar legibilidade */
+}
+
+/* Enhanced Mobile Styles - Visual Hierarchy & Spacing */
+@media (max-width: 768px) {
+  /* 1. Improved Visual Hierarchy */
+  h1 {
+    font-weight: 800 !important;
+    font-size: 2.25rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-weight: 700 !important;
+    font-size: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-weight: 700 !important;
+    font-size: 1.35rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  p {
+    font-weight: 400 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* 2. Button Size Adjustments */
+  button,
+  .button,
+  .btn,
+  a[role="button"] {
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 0.5rem !important; /* More uniform, less exaggerated */
+    height: auto !important;
+    min-height: 2.75rem !important;
+  }
+
+  /* 3. Card Spacing & Visual Separation */
+  .glass-card,
+  .glass-card-strong,
+  .glass-panel,
+  .glass-panel-strong {
+    backdrop-filter: none !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(200, 200, 200, 0.8) !important;
+    padding: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 0.75rem !important;
+  }
+
+  /* Add space between grid items */
+  .grid > div,
+  .grid > article,
+  .grid > section {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Section spacing adjustments */
+  .section-spacing {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* 4. Menu Navigation Improvements */
+  /* Backdrop blur for mobile menu */
+  [role="dialog"],
+  .mobile-menu-backdrop {
+    backdrop-filter: blur(8px) !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Mobile menu panel styling */
+  .mobile-menu,
+  [role="dialog"] > div:not(:first-child) {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 0 0 1rem 1rem !important;
+  }
+
+  /* Improved spacing for mobile menu items */
+  .mobile-menu a,
+  [role="dialog"] a {
+    padding: 0.75rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Container padding adjustments */
+  .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.85rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  button,
+  .button,
+  .btn,
+  a[role="button"] {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Remover os efeitos de brilho/blur dos painéis de vidro que contêm texto */
+.glass-panel,
+.glass-panel-strong,
+.glass-card,
+.glass-card-strong {
+  backdrop-filter: none !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(200, 200, 200, 0.8) !important;
+}
+
+/* Aumentar o contraste do texto */
+p,
+span,
+a,
+li,
+label,
+input,
+textarea,
+button {
+  color: #000 !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+
+/* Manter o efeito de brilho apenas nos elementos com gradient-text (azuis) */
+.gradient-text {
+  background: linear-gradient(90deg, #0078d7, #005a9e, #004275);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* Manter o efeito de brilho no gradient-text */
+.gradient-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  z-index: -1;
+  animation: shimmer-text 3s infinite;
+}
+
+/* Remover backdrop-filter de todos os elementos exceto os que têm classe específica */
+.backdrop-blur-md,
+.backdrop-blur-xl,
+.backdrop-blur-2xl,
+.backdrop-blur-sm {
+  backdrop-filter: none !important;
+}
+
+/* Manter o backdrop-filter apenas no header para que ele fique com efeito de vidro */
+header.glass-panel-strong {
+  backdrop-filter: blur(10px) !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Aumentar a opacidade do fundo para melhorar o contraste */
+.bg-white\/10,
+.bg-white\/20,
+.bg-white\/25,
+.bg-white\/30,
+.bg-white\/35,
+.bg-white\/40 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Garantir que os botões tenham bom contraste */
+.btn-microsoft-blue,
+button[class*="bg-gradient"],
+a[class*="bg-gradient"] {
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
